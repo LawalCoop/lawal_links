@@ -3,26 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <title>Lawal | Links</title>
-
-        <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
-
-        <!-- HTMX (solo se usa en el último botón) -->
         <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     </head>
 
     <body
-        class="relative min-h-screen flex items-center justify-center p-6 bg-white"
+        class="relative min-h-screen flex items-center justify-center bg-white p-4 sm:p-6"
     >
-        <!-- Fondo inferior oscuro -->
-        <div class="absolute inset-x-0 bottom-0 h-1/3 bg-[#1e2a32] z-0"></div>
-
-        <!-- Contenido principal -->
         <div
-            class="relative z-10 w-full max-w-md text-center space-y-6 bg-white p-12 rounded-lg border border-black border-[3px] shadow-[8px_8px_0px_0px_black]"
+            class="absolute inset-x-0 bottom-0 h-1/4 sm:h-1/3 bg-[#1e2a32] z-0"
+        ></div>
+
+        <div
+            class="relative z-10 w-full max-w-sm sm:max-w-md text-center space-y-6 bg-white p-6 sm:p-12 rounded-lg border border-black border-[3px] shadow-[6px_6px_0px_0px_black]"
         >
-            <!-- Logo -->
-            <div class="w-full max-w-xl h-20 overflow-hidden rounded-lg">
+            <div class="w-full h-16 sm:h-20 overflow-hidden rounded-lg">
                 <img
                     src="assets/logo.png"
                     alt="Logo"
@@ -30,39 +25,34 @@
                 />
             </div>
 
-            <p class="text-[#4B3860]">
+            <p class="text-[#4B3860] text-sm sm:text-base">
                 Encontranos en nuestras redes y canales oficiales
             </p>
 
-            <!-- Botones -->
-            <div class="flex flex-col gap-4">
-                <!-- 🌐 Web -->
+            <div class="flex flex-col gap-3 sm:gap-4">
                 <button
                     onclick="location.href='https://lawal.coop'"
-                    class="bg-[#91486F] text-white font-bold py-3 px-6 rounded-xl border-b-4 border-[#6a3452] hover:brightness-90 transition"
+                    class="bg-[#91486F] text-white font-bold py-3 px-4 sm:px-6 rounded-xl border-b-4 border-[#6a3452] hover:brightness-90 transition"
                 >
                     🌐 Web
                 </button>
 
-                <!-- 💬 Instagram -->
                 <button
                     onclick="location.href='https://instagram.com/lawalcoop'"
-                    class="bg-[#468D81] text-white font-bold py-3 px-6 rounded-xl border-b-4 border-[#2f6158] hover:brightness-90 transition"
+                    class="bg-[#468D81] text-white font-bold py-3 px-4 sm:px-6 rounded-xl border-b-4 border-[#2f6158] hover:brightness-90 transition"
                 >
                     💬 Instagram
                 </button>
 
-                <!-- ✉️ Contacto por email -->
                 <button
                     onclick="location.href='mailto:info@lawal.coop'"
-                    class="bg-gray-700 text-white font-bold py-3 px-6 rounded-xl border-b-4 border-gray-900 hover:brightness-90 transition"
+                    class="bg-gray-700 text-white font-bold py-3 px-4 sm:px-6 rounded-xl border-b-4 border-gray-900 hover:brightness-90 transition"
                 >
                     ✉️ Contacto por email
                 </button>
 
-                <!-- 📌 Ver info adicional -->
                 <button
-                    class="bg-[#8DA1B5] text-white font-bold py-3 px-6 rounded-xl border-b-4 border-[#66788e] hover:brightness-90 transition"
+                    class="bg-[#8DA1B5] text-white font-bold py-3 px-4 sm:px-6 rounded-xl border-b-4 border-[#66788e] hover:brightness-90 transition"
                     hx-get="/info-extra"
                     hx-target="#extra"
                     hx-swap="innerHTML"
@@ -70,6 +60,8 @@
                     📌 Ver info adicional
                 </button>
             </div>
+
+            <div id="extra" class="mt-4"></div>
         </div>
     </body>
 </html>
